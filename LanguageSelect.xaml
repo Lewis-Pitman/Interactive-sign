@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Interactive_sign.LanguageSelect"
+             Shell.NavBarIsVisible="False">
+
+    <Grid x:Name="languageSelectGrid">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <ImageButton Source="flag_uk.png" AutomationId="english" Grid.Row="0" Grid.Column="0" HorizontalOptions="Fill" VerticalOptions="Fill" Aspect="AspectFill" Clicked="LanguageClicked" Pressed="FlagPressed" Released="FlagReleased"/>
+        <ImageButton Source="flag_wales.png" AutomationId="welsh" Grid.Row="0" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Fill" Aspect="AspectFill" Clicked="LanguageClicked" Pressed="FlagPressed" Released="FlagReleased"/>
+        <ImageButton Source="flag_france.png" AutomationId="french" Grid.Row="1" Grid.Column="0" HorizontalOptions="Fill" VerticalOptions="Fill" Aspect="AspectFill" Clicked="LanguageClicked" Pressed="FlagPressed" Released="FlagReleased"/>
+        <ImageButton Source="flag_germany.png" AutomationId="german" Grid.Row="1" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Fill" Aspect="AspectFill" Clicked="LanguageClicked" Pressed="FlagPressed" Released="FlagReleased"/>
+    </Grid>
+
+    <!-- Language confirmation -->
+    
+
+
+
+</ContentPage>

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Interactive_sign.Home"
+             Title="Home"
+             Shell.NavBarIsVisible="False">
+
+    <ContentPage.Content>
+
+        <Grid BackgroundColor="#e8f5ff">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="7*" />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+
+            <!-- Header -->
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Shopping centre name -->
+                <BoxView BackgroundColor="#262626" Grid.Row="0" Grid.Column="0" ZIndex="0" />
+                <Label x:Name="shoppingCentreName" Grid.Row="0" Grid.Column="0" ZIndex="1" VerticalOptions="Center" FontSize="Header" TextColor="White">Shopping Centre Name</Label>
+
+                    <!-- Current time -->
+                <Grid  Grid.Column="1" BackgroundColor="#4b4b4b">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="3*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Image Source="clock.png" Grid.Column="0" Aspect="AspectFit"/>
+                    <Label x:Name="currentTimeLabel" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Header" TextColor="White">00:00</Label>
+                </Grid>
+            </Grid>
+
+            <!-- Dock -->
+            <Grid Grid.Row="2" BackgroundColor="Black">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+
+                <ImageButton x:Name="homeButton" AutomationId="home" Source="home.png" Grid.Column="0" BackgroundColor="#4b4b4b" Pressed="DockPressed" Released="DockReleased" Clicked="DockClicked"/>
+                <ImageButton x:Name="eventsButton" AutomationId="events" Source="events.png" Grid.Column="1" BackgroundColor="#262626" Pressed="DockPressed" Released="DockReleased" Clicked="DockClicked"/>
+                <ImageButton x:Name="mapButton" AutomationId="map" Source="map.png" Grid.Column="2" BackgroundColor="#262626" Pressed="DockPressed" Released="DockReleased" Clicked="DockClicked"/>
+                <ImageButton x:Name="settingsButton" AutomationId="settings" Source="gear.png" Grid.Column="3" BackgroundColor="#262626" Pressed="DockPressed" Released="DockReleased" Clicked="DockClicked"/>
+
+            </Grid>
+            
+            <!-- Main -->
+            <Grid Grid.Row="1" BackgroundColor="#e8f5ff">
+                <!-- Search/category tab -->
+                <ContentView x:Name="homeTab" IsVisible="True">
+                    <Label FontSize="Header" TextColor="Black">Not implemented yet</Label>
+                </ContentView>
+
+                <!-- Events tab -->
+                <ContentView x:Name="eventsTab" Padding="30" IsVisible="False">
+                    <Frame Padding="30" CornerRadius="45" BackgroundColor="#4357ad" ZIndex="0">
+                        <ScrollView Orientation="Horizontal" ZIndex="5">
+                            <Grid x:Name="eventsTabGrid" BackgroundColor="#4a4a4a">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="5.5*" />
+                                </Grid.RowDefinitions>
+
+                                <!-- This content is created dynamically in InitialiseEventGrid() -->
+                                
+                            </Grid>
+                        </ScrollView>
+                    </Frame>
+                </ContentView>
+
+                <!-- Map tab -->
+                <ContentView x:Name="mapTab" IsVisible="False">
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1.5*" />
+                            <ColumnDefinition Width="3*" />
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Left side panel -->
+                        <Grid Grid.Column="0" Padding="20">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="0.25*" />
+                                <RowDefinition Height="3*" />
+                            </Grid.RowDefinitions>
+
+                            <BoxView Grid.Row="0" BackgroundColor="#4357ad" CornerRadius="45" ZIndex="0" />
+
+                            <Grid Grid.Row="0" Padding="10" ZIndex="1">
+                                <Grid Padding="10">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="3*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <BoxView x:Name="currentLocation" BackgroundColor="#6673ad" CornerRadius="45" Grid.ColumnSpan="2" ZIndex="0"/>
+                                    <Button AutomationId="currentLocation" BackgroundColor="Transparent" Grid.ColumnSpan="2" ZIndex="2" Pressed="MapButtonPressed" Released="MapButtonReleased" Clicked="MapButtonClicked"/>
+
+                                    <Image Source="question.png" Grid.Column="0" ZIndex="1" VerticalOptions="Center" />
+                                    <Label x:Name="mapButton1" Text="Where am I?" Grid.Column="1" FontSize="Header" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" ZIndex="1" />
+                                </Grid>
+                            </Grid>
+
+                            <Grid Grid.Row="2" ZIndex="0">
+
+                                <BoxView Grid.Row="0" BackgroundColor="#4357ad" CornerRadius="45" ZIndex="0" />
+
+                                <Grid Grid.Row="2" Padding="20" ZIndex="1" >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2*" />
+                                        <RowDefinition Height="0.25*" />
+                                        <RowDefinition Height="2*" />
+                                        <RowDefinition Height="0.25*" />
+                                        <RowDefinition Height="2*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="3*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <BoxView Grid.Row="0" Grid.ColumnSpan="2" ZIndex="1" CornerRadius="45" BackgroundColor="#262626" />
+                                    <BoxView x:Name="zoomOut" Grid.Row="2"  Grid.ColumnSpan="2" ZIndex="0" CornerRadius="45" BackgroundColor="#6673ad" />
+                                    <BoxView x:Name="zoomIn" Grid.Row="4"  Grid.ColumnSpan="2" ZIndex="0" CornerRadius="45" BackgroundColor="#6673ad" />
+
+                                    <Image Source="move.png" Grid.Row="0" Grid.Column="0" ZIndex="2" VerticalOptions="Center" />
+                                    <Label x:Name="mapButton2" Text="Move map" Grid.Row="0" Grid.Column="1" FontSize="Header" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" ZIndex="2" />
+
+                                    <Image Source="out.png" Grid.Row="2" Grid.Column="0" ZIndex="2" VerticalOptions="Center" />
+                                    <Label x:Name="mapButton3" Text="Zoom out" Grid.Row="2" Grid.Column="1" FontSize="Header" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" ZIndex="2" />
+                                    <Button  AutomationId="zoomOut" BackgroundColor="Transparent" Grid.Row="2" Grid.ColumnSpan="2" ZIndex="3" Pressed="MapButtonPressed" Released="MapButtonReleased" Clicked="MapButtonClicked"/>
+
+                                    <Image Source="in.png" Grid.Row="4" Grid.Column="0" ZIndex="2" VerticalOptions="Center" />
+                                    <Label x:Name="mapButton4" AutomationId="zoomOut" Text="Zoom in" Grid.Row="4" Grid.Column="1" FontSize="Header" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" ZIndex="2" />
+                                    <Button  AutomationId="zoomIn" BackgroundColor="Transparent" Grid.Row="4" Grid.ColumnSpan="2" ZIndex="3" Pressed="MapButtonPressed" Released="MapButtonReleased" Clicked="MapButtonClicked"/>
+
+                                </Grid>
+                            </Grid>
+
+                        </Grid>
+                        
+                        <!-- Map -->
+                        <Grid Grid.Column="1" Padding="5" ZIndex="0">
+                            <BoxView ZIndex="0" BackgroundColor="#4357ad" CornerRadius="25" />
+                        </Grid>
+                        <Grid Grid.Column="1" Padding="20" ZIndex="1">
+                            <WebView x:Name="googleMap" ZIndex="1" Grid.Column="1" Source="https://www.google.com/maps/@50.9480587,-2.63704,18.67" />
+                        </Grid>
+
+
+                    </Grid>
+                    
+                </ContentView>
+                
+                <!-- Settings tab -->
+                <ContentView x:Name="settingsTab" IsVisible="False">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Language button -->
+                        <Grid Padding="20" Grid.Row="0" Grid.Column="0" BackgroundColor="#b80c09">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="4*" />
+                                <RowDefinition Height="1.5*" />
+                            </Grid.RowDefinitions>
+
+                            <BoxView x:Name="languageBackground" ZIndex="0" Grid.RowSpan="2" BackgroundColor="#c96e6d" />
+                            <Button AutomationId="languageButton" ZIndex="3" Grid.RowSpan="2" BackgroundColor="Transparent" Pressed="SettingsButtonPressed" Released="SettingsButtonReleased" Clicked="SettingsButtonClicked"/>
+                            <Image Grid.Row="0" Source="language.png" ZIndex="1"/>
+                            <Label x:Name="languageLabel" Grid.Row="1" Text="Language/Cymraeg/Français/Deutsch" ZIndex="2" FontSize="Header" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        </Grid>
+
+                        <!-- Font size button -->
+                        <Grid Padding="20" Grid.Row="0" Grid.Column="1" BackgroundColor="#4357ad">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="4*" />
+                                <RowDefinition Height="1.5*" />
+                            </Grid.RowDefinitions>
+
+                            <BoxView x:Name="scaleBackground" ZIndex="0" Grid.RowSpan="2" BackgroundColor="#6673ad" />
+                            <Button AutomationId="scaleButton" ZIndex="3" Grid.RowSpan="2" BackgroundColor="Transparent" Pressed="SettingsButtonPressed" Released="SettingsButtonReleased" Clicked="SettingsButtonClicked"/>
+                            <Image Grid.Row="0" Source="text.png" ZIndex="1"/>
+                            <Label x:Name="fontLabel" Grid.Row="1" Text="Font size" ZIndex="2" FontSize="Header" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        </Grid>
+
+                        <!-- Accessibility button -->
+                        <Grid Padding="20" Grid.Row="1" Grid.Column="0" BackgroundColor="#a5cc6b">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="4*" />
+                                <RowDefinition Height="1.5*" />
+                            </Grid.RowDefinitions>
+
+                            <BoxView x:Name="accessibilityBackground" ZIndex="0" Grid.RowSpan="2" BackgroundColor="#c6d7ad" />
+                            <Button AutomationId="accessibilityButton" ZIndex="3" Grid.RowSpan="2" BackgroundColor="Transparent" Pressed="SettingsButtonPressed" Released="SettingsButtonReleased" Clicked="SettingsButtonClicked"/>
+                            <Image Grid.Row="0" Source="user.png" ZIndex="1"/>
+                            <Label x:Name="accessibilityLabel" Grid.Row="1" Text="Accessibility" ZIndex="2" FontSize="Header" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        </Grid>
+
+                        <!-- Help button -->
+                        <Grid Padding="20" Grid.Row="1" Grid.Column="1" BackgroundColor="#fcab10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="4*" />
+                                <RowDefinition Height="1.5*" />
+                            </Grid.RowDefinitions>
+
+                            <BoxView x:Name="helpBackground" ZIndex="0" Grid.RowSpan="2" BackgroundColor="#ffdfa3" />
+                            <Button AutomationId="helpButton" ZIndex="3" Grid.RowSpan="2" BackgroundColor="Transparent" Pressed="SettingsButtonPressed" Released="SettingsButtonReleased" Clicked="SettingsButtonClicked"/>
+                            <Image Grid.Row="0" Source="question.png" ZIndex="1"/>
+                            <Label x:Name="helpLabel" Grid.Row="1" Text="Help" ZIndex="2" FontSize="Header" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        </Grid>
+
+                    </Grid>
+                </ContentView>
+
+            </Grid>
+
+
+        </Grid>
+
+    </ContentPage.Content>
+
+</ContentPage>

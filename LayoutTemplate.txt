@@ -1,0 +1,106 @@
+﻿CODE BEHIND
+    private void DockPressed(object sender, EventArgs e)
+    {
+        var button = sender as ImageButton;
+        button.BackgroundColor = Color.FromArgb("000000");
+    }
+
+    private void DockReleased(object sender, EventArgs e)
+    {
+        var button = sender as ImageButton;
+
+        if (button.AutomationId == "settings")
+        {
+            button.BackgroundColor = Color.FromArgb("4b4b4b");
+        }
+        else
+        {
+            button.BackgroundColor = Color.FromArgb("262626");
+        }
+    }
+
+    private async void DockClicked(object sender, EventArgs e)
+    {
+        var tabClicked = sender as ImageButton;
+
+        await Navigation.PushAsync(new Home(tabClicked.AutomationId), false);
+    }
+}
+
+XAML
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Interactive_sign.SettingsDetails"
+             Title="SettingsDetails"
+             Shell.NavBarIsVisible="False">
+
+    <ContentPage.Content>
+
+        <Grid BackgroundColor="#e8f5ff">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="7*" />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+
+            <!-- Header -->
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Shopping centre name -->
+                <StackLayout  Grid.Column="0" BackgroundColor="#262626">
+                    <Label x:Name="shoppingCentreName" VerticalOptions="Center" FontSize="Header" Padding="20" TextColor="White">Shopping Centre Name</Label>
+                </StackLayout>
+
+                <!-- Current time -->
+                <Grid  Grid.Column="1" BackgroundColor="#4b4b4b">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="3*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Image Source="clock.png" Grid.Column="0" Aspect="AspectFit"/>
+                    <Label x:Name="currentTimeLabel" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Header" Padding="20" TextColor="White">00:00</Label>
+                </Grid>
+            </Grid>
+
+            <!-- Dock -->
+            <Grid Grid.Row="2" BackgroundColor="Black">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+
+                <ImageButton x:Name="homeButton" AutomationId="home" Source="home.png" Grid.Column="0" BackgroundColor="#262626" Pressed="DockPressed" Released="DockReleased" Clicked="DockClicked"/>
+                <ImageButton x:Name="eventsButton" AutomationId="events" Source="events.png" Grid.Column="1" BackgroundColor="#262626" Pressed="DockPressed" Released="DockReleased" Clicked="DockClicked"/>
+                <ImageButton x:Name="mapButton" AutomationId="map" Source="map.png" Grid.Column="2" BackgroundColor="#262626" Pressed="DockPressed" Released="DockReleased" Clicked="DockClicked"/>
+                <ImageButton x:Name="settingsButton" AutomationId="settings" Source="gear.png" Grid.Column="3" BackgroundColor="#4b4b4b" Pressed="DockPressed" Released="DockReleased" Clicked="DockClicked"/>
+
+            </Grid>
+
+            <!-- Main -->
+            <Grid Grid.Row="1" BackgroundColor="#e8f5ff">
+                <ContentView x:Name="typeSelection">
+
+                </ContentView>
+            </Grid>
+
+
+        </Grid>
+
+    </ContentPage.Content>
+
+</ContentPage>

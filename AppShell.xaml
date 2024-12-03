@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Interactive_sign.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Interactive_sign"
+    Shell.FlyoutBehavior="Disabled"
+    Title="Interactive_sign">
+
+    <ShellContent
+        ContentTemplate="{DataTemplate local:LanguageSelect}"
+        Route="LanguageSelect" />
+
+    <ShellContent
+        ContentTemplate="{DataTemplate local:LanguageConfirm}"
+        Route="LanguageConfirm" />
+
+    <ShellContent
+        ContentTemplate="{DataTemplate local:ScaleSelect}"
+        Route="ScaleSelect" />
+
+    <ShellContent
+        ContentTemplate="{DataTemplate local:Accessibility}"
+        Route="Accessibility" />
+
+    <!-- "Home" refers to the base screens of search, events, map and settings -->
+    <!-- Clicking an item in one of those screens will switch the page -->
+    <ShellContent
+        ContentTemplate="{DataTemplate local:Home}"
+        Route="Home" />
+
+    <ShellContent
+    ContentTemplate="{DataTemplate local:HelpScreen}"
+    Route="HelpScreen" />
+    
+</Shell>

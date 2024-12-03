@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Interactive_sign.ScaleSelect"
+             Title="ScaleSelect"
+             Shell.NavBarIsVisible="False">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid BackgroundColor="#e8f5ff">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="1.5*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+
+            <ImageButton x:Name="increaseScaleButton" AutomationId="increase" Grid.Column="0" Source="plus.png" BackgroundColor="#262626" HorizontalOptions="FillAndExpand" VerticalOptions="Fill" Pressed="ButtonPressed" Released="ButtonReleased" Clicked="ChangeScale"/>
+            <ImageButton x:Name="decreaseScaleButton" AutomationId="decrease" Grid.Column="2" Source="minus.png" BackgroundColor="#262626" HorizontalOptions="FillAndExpand" VerticalOptions="Fill" Pressed="ButtonPressed" Released="ButtonReleased" Clicked="ChangeScale"/>
+
+            <Label x:Name="scaleText" Grid.Column="1" TextColor="Black" FontSize="100" HorizontalTextAlignment="Center" VerticalTextAlignment="Center">Use the buttons to the left and right so you can read this comfortably</Label>
+            
+        </Grid>
+
+        <ImageButton x:Name="confirmButton" AutomationId="confirm" Grid.Row="1" Source="confirm.png" BackgroundColor="#52aa5e" HorizontalOptions="FillAndExpand" VerticalOptions="Fill" Pressed="ButtonPressed" Released="ButtonReleased" Clicked="Confirm"/>
+    </Grid>
+    
+</ContentPage>

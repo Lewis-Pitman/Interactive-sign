@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Interactive_sign.HelpScreen"
+             Title="HelpScreen"
+             Shell.NavBarIsVisible="False">
+
+    <ContentPage.Content>
+
+        <Grid BackgroundColor="#e8f5ff">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="7*" />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+
+            <!-- Header -->
+            <Grid BackgroundColor="#262626" Grid.Row="0">
+                <Label TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="Header">What do you need help with?</Label>
+            </Grid>
+
+            <!-- Dock -->
+            <ImageButton x:Name="cancelButton" Grid.Row="3" Source="cancel.png" BackgroundColor="#c73e1d" HorizontalOptions="FillAndExpand" VerticalOptions="Fill" Clicked="CancelClicked" Pressed="CancelPressed" Released="CancelReleased" />
+
+            <!-- Main -->
+            <Grid Grid.Row="1" BackgroundColor="#e8f5ff">
+                <ContentView x:Name="typeSelection" IsVisible="False">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        
+                        <!-- Search button -->
+                        <Grid Grid.Column="0" BackgroundColor="Black">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="2.5*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+
+                            <Image Grid.Row="1" Source="home.png" ZIndex="1" />
+                            <Label Grid.Row="2" ZIndex="2" FontAttributes="Bold" FontSize="Header" Text="SEARCH" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
+
+                            <BoxView x:Name="search" ZIndex="0" Grid.RowSpan="3" BackgroundColor="#6673ad" />
+                            <Button AutomationId="search" Grid.RowSpan="3" ZIndex="3" BackgroundColor="Transparent" Pressed="PressedButton" Released="ReleasedButton" Clicked="ClickedButton" />
+                        </Grid>
+
+                        <!-- Events button -->
+                        <Grid Grid.Column="1" BackgroundColor="Black">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="2.5*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+
+                            <Image Grid.Row="1" Source="events.png" ZIndex="1" Aspect="AspectFit" />
+                            <Label Grid.Row="2" ZIndex="2" FontAttributes="Bold" FontSize="Header" Text="EVENTS" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
+
+                            <BoxView x:Name="events" ZIndex="0" Grid.RowSpan="3" BackgroundColor="#c6d7ad" />
+                            <Button AutomationId="events" Grid.RowSpan="3" ZIndex="3" BackgroundColor="Transparent" Pressed="PressedButton" Released="ReleasedButton" Clicked="ClickedButton"/>
+                        </Grid>
+
+                        <!-- Map button -->
+                        <Grid Grid.Column="2" BackgroundColor="Black">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="2.5*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+
+                            <Image Grid.Row="1" Source="map.png" ZIndex="1" Aspect="AspectFit" />
+                            <Label Grid.Row="2" ZIndex="2" FontAttributes="Bold" FontSize="Header" Text="MAP" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" />
+
+                            <BoxView x:Name="map" ZIndex="0" Grid.RowSpan="3" BackgroundColor="#ffbd40" />
+                            <Button AutomationId="map" ZIndex="3" Grid.RowSpan="3" BackgroundColor="Transparent" Pressed="PressedButton" Released="ReleasedButton" Clicked="ClickedButton"/>
+                        </Grid>
+
+                    </Grid>
+                </ContentView>
+                <ContentView x:Name="searchHelp" BackgroundColor="#e8f5ff">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="3*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        
+                        <!-- Navigation buttons -->
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <BoxView BackgroundColor="#262626" Grid.ColumnSpan="2" ZIndex="0" />
+                            <ImageButton Grid.Column="0" ZIndex="1" Source="left.png" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="#262626" />
+                            <ImageButton Grid.Column="1" ZIndex="1" Source="right.png" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="#262626" />
+                        </Grid>
+                        
+                        <!-- Main content -->
+                        <Grid Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <BoxView Grid.Column="0" BackgroundColor="Black" CornerRadius="30" />
+
+                            <Grid Grid.Column="1" Padding="20">
+                                <BoxView BackgroundColor="#262626" CornerRadius="30" />
+                                <Label FontSize="Header" TextColor="White" Text="Paragraph text" Padding="20" />
+                            </Grid>
+                        </Grid>
+                        
+                    </Grid>
+                </ContentView>
+            </Grid>
+
+
+        </Grid>
+
+    </ContentPage.Content>
+
+</ContentPage>

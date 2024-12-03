@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Interactive_sign.LanguageConfirm"
+             Title="LanguageConfirm"
+             Shell.NavBarIsVisible="False">
+    
+    <Grid x:Name="languageConfirmGrid" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="#e8f5ff">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="2*" />
+        </Grid.RowDefinitions>
+
+        <!-- Flag picture and text below flag -->
+        <Image x:Name="flagImage" Grid.Row="1" Source="flag_uk.png" HorizontalOptions="Center"></Image>
+        <Label x:Name="flagName" Grid.Row="2" HorizontalOptions="Center" FontSize="100" TextColor="Black">English</Label>
+
+        <!-- Buttons in the bottom row -->
+        <Grid Grid.Row="3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" ColumnDefinitions="*,*">
+            <ImageButton x:Name="confirmButton" Grid.Column="0" Source="confirm.png" BackgroundColor="#52aa5e" HorizontalOptions="FillAndExpand" VerticalOptions="Fill" Clicked="ConfirmClicked" Pressed="ConfirmPressed" Released="ConfirmReleased"/>
+            <ImageButton x:Name="cancelButton" Grid.Column="1" Source="cancel.png" BackgroundColor="#c73e1d" HorizontalOptions="FillAndExpand" VerticalOptions="Fill" Clicked="CancelClicked" Pressed="CancelPressed" Released="CancelReleased" />
+        </Grid>
+    </Grid>
+    
+</ContentPage>
