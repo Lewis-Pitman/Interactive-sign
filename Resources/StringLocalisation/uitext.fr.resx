@@ -120,4 +120,13 @@
   <data name="ShoppingCentreName" xml:space="preserve">
     <value>Centre commercial Minchel Sminth</value>
   </data>
+  <data name="FontSizeText" xml:space="preserve">
+    <value>Taille de la police</value>
+  </data>
+  <data name="AccessibilitySettingText" xml:space="preserve">
+    <value>Accessibilité</value>
+  </data>
+  <data name="HelpSettingText" xml:space="preserve">
+    <value>Aide</value>
+  </data>
 </root>

@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Interactive sign")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+59e61aca6f56c31c161b04b178e0a06b19fc8cba")]
 [assembly: System.Reflection.AssemblyProductAttribute("Interactive sign")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Interactive sign")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

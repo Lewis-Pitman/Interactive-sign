@@ -1,8 +1,4 @@
 is_global = true
-build_property.EnableAotAnalyzer = 
-build_property.EnableSingleFileAnalyzer = 
-build_property.EnableTrimAnalyzer = false
-build_property.IncludeAllContentForSelfExtract = 
 build_property.TargetFramework = net8.0-ios
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = 
@@ -15,63 +11,3 @@ build_property.RootNamespace = Interactive_sign
 build_property.ProjectDir = C:\Users\Lewis\Desktop\Code projects\Interactive sign\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
-
-[C:/Users/Lewis/Desktop/Code projects/Interactive sign/Accessibility.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = Interactive_sign.Accessibility.xaml
-build_metadata.AdditionalFiles.TargetPath = Accessibility.xaml
-build_metadata.AdditionalFiles.RelativePath = Accessibility.xaml
-
-[C:/Users/Lewis/Desktop/Code projects/Interactive sign/App.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = Interactive_sign.App.xaml
-build_metadata.AdditionalFiles.TargetPath = App.xaml
-build_metadata.AdditionalFiles.RelativePath = App.xaml
-
-[C:/Users/Lewis/Desktop/Code projects/Interactive sign/AppShell.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = Interactive_sign.AppShell.xaml
-build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
-build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
-
-[C:/Users/Lewis/Desktop/Code projects/Interactive sign/HelpScreen.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = Interactive_sign.HelpScreen.xaml
-build_metadata.AdditionalFiles.TargetPath = HelpScreen.xaml
-build_metadata.AdditionalFiles.RelativePath = HelpScreen.xaml
-
-[C:/Users/Lewis/Desktop/Code projects/Interactive sign/Home.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = Interactive_sign.Home.xaml
-build_metadata.AdditionalFiles.TargetPath = Home.xaml
-build_metadata.AdditionalFiles.RelativePath = Home.xaml
-
-[C:/Users/Lewis/Desktop/Code projects/Interactive sign/LanguageConfirm.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = Interactive_sign.LanguageConfirm.xaml
-build_metadata.AdditionalFiles.TargetPath = LanguageConfirm.xaml
-build_metadata.AdditionalFiles.RelativePath = LanguageConfirm.xaml
-
-[C:/Users/Lewis/Desktop/Code projects/Interactive sign/LanguageSelect.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = Interactive_sign.LanguageSelect.xaml
-build_metadata.AdditionalFiles.TargetPath = LanguageSelect.xaml
-build_metadata.AdditionalFiles.RelativePath = LanguageSelect.xaml
-
-[C:/Users/Lewis/Desktop/Code projects/Interactive sign/Resources/Styles/Colors.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = Interactive_sign.Resources.Styles.Colors.xaml
-build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
-build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
-
-[C:/Users/Lewis/Desktop/Code projects/Interactive sign/Resources/Styles/Styles.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = Interactive_sign.Resources.Styles.Styles.xaml
-build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
-build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
-
-[C:/Users/Lewis/Desktop/Code projects/Interactive sign/ScaleSelect.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = Interactive_sign.ScaleSelect.xaml
-build_metadata.AdditionalFiles.TargetPath = ScaleSelect.xaml
-build_metadata.AdditionalFiles.RelativePath = ScaleSelect.xaml

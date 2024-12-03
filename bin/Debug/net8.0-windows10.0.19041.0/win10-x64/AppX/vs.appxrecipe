@@ -29,25 +29,25 @@
     <AppXManifest Include="C:\Users\Lewis\Desktop\Code projects\Interactive sign\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2024-12-02T21:40:19.774</Modified>
+      <Modified>2024-12-03T22:23:49.061</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Lewis\Desktop\Code projects\Interactive sign\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2024-11-29T18:40:58.589</Modified>
+      <Modified>2024-12-03T21:16:42.449</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Lewis\Desktop\Code projects\Interactive sign\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Interactive sign.runtimeconfig.json">
       <PackagePath>Interactive sign.runtimeconfig.json</PackagePath>
-      <Modified>2024-11-29T13:45:28.419</Modified>
+      <Modified>2024-12-03T21:14:32.236</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Lewis\Desktop\Code projects\Interactive sign\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Interactive sign.dll">
       <PackagePath>Interactive sign.dll</PackagePath>
-      <Modified>2024-12-02T21:40:18.855</Modified>
+      <Modified>2024-12-03T22:23:48.546</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Lewis\Desktop\Code projects\Interactive sign\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>Interactive sign.exe</PackagePath>
-      <Modified>2024-12-02T21:40:18.902</Modified>
+      <Modified>2024-12-03T22:23:48.551</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Lewis\Desktop\Code projects\Interactive sign\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
@@ -643,19 +643,19 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Lewis\Desktop\Code projects\Interactive sign\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Interactive sign.deps.json">
       <PackagePath>Interactive sign.deps.json</PackagePath>
-      <Modified>2024-11-29T18:40:58.444</Modified>
+      <Modified>2024-12-03T21:16:42.353</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Lewis\Desktop\Code projects\Interactive sign\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\cy\Interactive sign.resources.dll">
       <PackagePath>cy\Interactive sign.resources.dll</PackagePath>
-      <Modified>2024-12-02T21:40:19.514</Modified>
+      <Modified>2024-12-03T22:23:48.881</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Lewis\Desktop\Code projects\Interactive sign\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\de\Interactive sign.resources.dll">
       <PackagePath>de\Interactive sign.resources.dll</PackagePath>
-      <Modified>2024-12-02T21:40:19.545</Modified>
+      <Modified>2024-12-03T22:23:48.913</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Lewis\Desktop\Code projects\Interactive sign\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\fr\Interactive sign.resources.dll">
       <PackagePath>fr\Interactive sign.resources.dll</PackagePath>
-      <Modified>2024-12-02T21:40:19.577</Modified>
+      <Modified>2024-12-03T22:23:48.951</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Lewis\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.19041.34\lib\net6.0\Microsoft.Windows.SDK.NET.dll">
       <PackagePath>Microsoft.Windows.SDK.NET.dll</PackagePath>

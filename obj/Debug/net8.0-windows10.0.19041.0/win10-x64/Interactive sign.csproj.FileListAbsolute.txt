@@ -279,3 +279,4 @@ C:\Users\Lewis\Desktop\Code projects\Interactive sign\obj\Debug\net8.0-windows10
 C:\Users\Lewis\Desktop\Code projects\Interactive sign\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\out.scale-150.png
 C:\Users\Lewis\Desktop\Code projects\Interactive sign\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\out.scale-200.png
 C:\Users\Lewis\Desktop\Code projects\Interactive sign\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\out.scale-400.png
+C:\Users\Lewis\Desktop\Code projects\Interactive sign\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\Interactive sign.sourcelink.json

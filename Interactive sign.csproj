@@ -1,8 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net8.0-android;net8.0-ios;net8.0-maccatalyst</TargetFrameworks>
-		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net8.0-windows10.0.19041.0</TargetFrameworks>
+		<TargetFrameworks>net8.0-windows10.0.19041.0</TargetFrameworks>
 		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
 		<!-- <TargetFrameworks>$(TargetFrameworks);net8.0-tizen</TargetFrameworks> -->
 
@@ -13,7 +12,7 @@
 		either BOTH runtimes must be indicated or ONLY macatalyst-x64. -->
 		<!-- For example: <RuntimeIdentifiers>maccatalyst-x64;maccatalyst-arm64</RuntimeIdentifiers> -->
 
-		<OutputType>Exe</OutputType>
+		<OutputType>WinExe</OutputType>
 		<RootNamespace>Interactive_sign</RootNamespace>
 		<UseMaui>true</UseMaui>
 		<SingleProject>true</SingleProject>
@@ -83,22 +82,22 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="LanguageSelect.xaml.cs">
+	  <Compile Update="Pages\LanguageSelect.xaml.cs">
 	    <DependentUpon>LanguageSelect.xaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="LanguageConfirm.xaml.cs">
+	  <Compile Update="Pages\LanguageConfirm.xaml.cs">
 	    <DependentUpon>LanguageConfirm.xaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="Home.xaml.cs">
+	  <Compile Update="Pages\Home.xaml.cs">
 	    <DependentUpon>Home.xaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="Accessibility.xaml.cs">
+	  <Compile Update="Pages\Accessibility.xaml.cs">
 	    <DependentUpon>Accessibility.xaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="HelpScreen.xaml.cs">
+	  <Compile Update="Pages\HelpScreen.xaml.cs">
 	    <DependentUpon>HelpScreen.xaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="ScaleSelect.xaml.cs">
+	  <Compile Update="Pages\ScaleSelect.xaml.cs">
 	    <DependentUpon>ScaleSelect.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="Resources\StringLocalisation\UIText.cy.Designer.cs">
@@ -164,19 +163,19 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="LanguageConfirm.xaml">
+	  <MauiXaml Update="Pages\LanguageConfirm.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Home.xaml">
+	  <MauiXaml Update="Pages\Home.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Accessibility.xaml">
+	  <MauiXaml Update="Pages\Accessibility.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="HelpScreen.xaml">
+	  <MauiXaml Update="Pages\HelpScreen.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="ScaleSelect.xaml">
+	  <MauiXaml Update="Pages\ScaleSelect.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

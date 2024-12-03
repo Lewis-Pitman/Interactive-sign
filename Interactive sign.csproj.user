@@ -6,19 +6,19 @@
     <ActiveDebugProfile>Windows Machine</ActiveDebugProfile>
   </PropertyGroup>
   <ItemGroup>
-    <MauiXaml Update="LanguageConfirm.xaml">
+    <MauiXaml Update="Pages\LanguageConfirm.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
-    <MauiXaml Update="Home.xaml">
+    <MauiXaml Update="Pages\Home.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
-    <MauiXaml Update="Accessibility.xaml">
+    <MauiXaml Update="Pages\Accessibility.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
-    <MauiXaml Update="HelpScreen.xaml">
+    <MauiXaml Update="Pages\HelpScreen.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
-    <MauiXaml Update="ScaleSelect.xaml">
+    <MauiXaml Update="Pages\ScaleSelect.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
   </ItemGroup>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ namespace Interactive_sign
         private static Settings _instance; //Stores the single instance of the object
 
         public string Language { get; set; }
+        public CultureInfo savedCulture { get; set; }
         public int Scale { get; set; }
         public bool Bionic { get; set; }
         public bool ScreenReader { get; set; }
