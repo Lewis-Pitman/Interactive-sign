@@ -64,7 +64,7 @@ namespace Interactive_sign.ViewModels
             {
                 if (helpSettingText != value)
                 {
-                    centreNameText = value;
+                    helpSettingText = value;
                     OnPropertyChanged(nameof(HelpSettingText)); // Notify binding system
                 }
             }

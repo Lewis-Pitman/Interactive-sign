@@ -61,6 +61,33 @@ namespace Interactive_sign.Resources.StringLocalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Accessibility.
+        /// </summary>
+        internal static string AccessibilitySettingText {
+            get {
+                return ResourceManager.GetString("AccessibilitySettingText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Font Size.
+        /// </summary>
+        internal static string FontSizeSettingText {
+            get {
+                return ResourceManager.GetString("FontSizeSettingText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Help.
+        /// </summary>
+        internal static string HelpSettingText {
+            get {
+                return ResourceManager.GetString("HelpSettingText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Minchel Sminth Shopping Centre.
         /// </summary>
         internal static string ShoppingCentreName {

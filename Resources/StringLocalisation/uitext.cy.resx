@@ -120,8 +120,8 @@
   <data name="ShoppingCentreName" xml:space="preserve">
     <value>Canolfan fasnachol Minchel Sminth</value>
   </data>
-  <data name="FontSizeText" xml:space="preserve">
-    <value>Maint Ffont</value>
+  <data name="FontSizeSettingText" xml:space="preserve">
+    <value>Maint y ffont</value>
   </data>
   <data name="AccessibilitySettingText" xml:space="preserve">
     <value>Hygyrchedd</value>
