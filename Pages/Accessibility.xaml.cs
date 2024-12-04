@@ -1,18 +1,41 @@
+using Interactive_sign.ViewModels;
+
 namespace Interactive_sign;
 
 public partial class Accessibility : ContentPage
 {
     private bool cameFromSettings;
+    private AccessibilityViewModel accessibilityViewModel;
 
     public Accessibility(bool _cameFromSettings)
 	{
 		InitializeComponent();
         cameFromSettings = _cameFromSettings;
+
+        accessibilityViewModel = new AccessibilityViewModel();
+        BindingContext = accessibilityViewModel;
 	}
 
     protected override void OnAppearing()
     {
         base.OnAppearing();
+
+        //Apply settings
+
+        //Font ---
+        headerText.FontSize = Settings.Instance.Scale + 20;
+        guidanceText.FontSize = Settings.Instance.Scale;
+        BionicButton.FontSize = Settings.Instance.Scale;
+        bionicLabel.FontSize = Settings.Instance.Scale;
+        ScreenReaderButton.FontSize = Settings.Instance.Scale;
+        screenReaderLabel.FontSize = Settings.Instance.Scale;
+
+        //Language ---
+
+        accessibilityViewModel.HeaderText = LocalisationManager.GetString("AccessibilitySettingText");
+        accessibilityViewModel.BionicReading = LocalisationManager.GetString("AccessibilityBionicReading");
+        accessibilityViewModel.ScreenReader = LocalisationManager.GetString("AccessibilityScreenReader");
+        accessibilityViewModel.GuidanceMessage = LocalisationManager.GetString("AccessibilityGuidanceMessage");
 
         if (Settings.Instance.Bionic)
         {

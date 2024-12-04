@@ -21,8 +21,8 @@
             <ImageButton x:Name="increaseScaleButton" AutomationId="increase" Grid.Column="0" Source="plus.png" BackgroundColor="#262626" HorizontalOptions="FillAndExpand" VerticalOptions="Fill" Pressed="ButtonPressed" Released="ButtonReleased" Clicked="ChangeScale"/>
             <ImageButton x:Name="decreaseScaleButton" AutomationId="decrease" Grid.Column="2" Source="minus.png" BackgroundColor="#262626" HorizontalOptions="FillAndExpand" VerticalOptions="Fill" Pressed="ButtonPressed" Released="ButtonReleased" Clicked="ChangeScale"/>
 
-            <Label x:Name="scaleText" Grid.Column="1" TextColor="Black" FontSize="100" HorizontalTextAlignment="Center" VerticalTextAlignment="Center">Use the buttons to the left and right so you can read this comfortably</Label>
-            
+            <Label x:Name="scaleText" Grid.Column="1" TextColor="Black" FontSize="100" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="{x:Binding ScaleText}" />
+
         </Grid>
 
         <ImageButton x:Name="confirmButton" AutomationId="confirm" Grid.Row="1" Source="confirm.png" BackgroundColor="#52aa5e" HorizontalOptions="FillAndExpand" VerticalOptions="Fill" Pressed="ButtonPressed" Released="ButtonReleased" Clicked="Confirm"/>

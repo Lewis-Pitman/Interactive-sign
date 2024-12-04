@@ -1,21 +1,30 @@
+using Interactive_sign.ViewModels;
+
 namespace Interactive_sign;
 
 public partial class ScaleSelect : ContentPage
 {
     private bool cameFromSettings;
+    private ScaleSelectViewModel scaleSelectViewModel;
 
 	public ScaleSelect(bool _cameFromSettings)
 	{
 		InitializeComponent();
         scaleText.FontSize = 70;
         cameFromSettings = _cameFromSettings;
+
+        scaleSelectViewModel = new ScaleSelectViewModel();
+        BindingContext = scaleSelectViewModel;
 	}
 
     protected override void OnAppearing()
     {
         base.OnAppearing();
 
+        //Apply settings
         scaleText.FontSize = Settings.Instance.Scale;
+        scaleSelectViewModel.ScaleText = LocalisationManager.GetString("ScaleAdjustableText");
+
     }
 
     private void ChangeScale(object sender, EventArgs e)

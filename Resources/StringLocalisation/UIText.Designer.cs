@@ -61,6 +61,33 @@ namespace Interactive_sign.Resources.StringLocalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bionic Reading.
+        /// </summary>
+        internal static string AccessibilityBionicReading {
+            get {
+                return ResourceManager.GetString("AccessibilityBionicReading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Click the on/off buttons to toggle settings.
+        /// </summary>
+        internal static string AccessibilityGuidanceMessage {
+            get {
+                return ResourceManager.GetString("AccessibilityGuidanceMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Screen Reader.
+        /// </summary>
+        internal static string AccessibilityScreenReader {
+            get {
+                return ResourceManager.GetString("AccessibilityScreenReader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Accessibility.
         /// </summary>
         internal static string AccessibilitySettingText {
@@ -84,6 +111,51 @@ namespace Interactive_sign.Resources.StringLocalisation {
         internal static string HelpSettingText {
             get {
                 return ResourceManager.GetString("HelpSettingText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Move Map.
+        /// </summary>
+        internal static string MapMoveMap {
+            get {
+                return ResourceManager.GetString("MapMoveMap", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Where am I?.
+        /// </summary>
+        internal static string MapWhereAmI {
+            get {
+                return ResourceManager.GetString("MapWhereAmI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zoom In.
+        /// </summary>
+        internal static string MapZoomIn {
+            get {
+                return ResourceManager.GetString("MapZoomIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zoom Out.
+        /// </summary>
+        internal static string MapZoomOut {
+            get {
+                return ResourceManager.GetString("MapZoomOut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use the buttons on the left and right to make this comfortable to read.
+        /// </summary>
+        internal static string ScaleAdjustableText {
+            get {
+                return ResourceManager.GetString("ScaleAdjustableText", resourceCulture);
             }
         }
         

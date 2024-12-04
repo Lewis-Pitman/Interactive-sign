@@ -13,8 +13,8 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <Label Grid.Row="0" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="Header">Accessibility</Label>
-        <Label Grid.Row="2" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="Header">Click the on/off buttons to toggle</Label>
+        <Label x:Name="headerText" Grid.Row="0" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="Header" Text="{x:Binding HeaderText}" />
+        <Label x:Name="guidanceText" Grid.Row="2" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="Header" Text="{x:Binding GuidanceMessage}" />
         <ImageButton x:Name="confirmButton" Grid.Row="3" Source="confirm.png" BackgroundColor="#52aa5e" HorizontalOptions="FillAndExpand" VerticalOptions="Fill" Pressed="ConfirmPressed" Released="ConfirmReleased" Clicked="Confirm"/>
 
         <Grid Grid.Row="1" BackgroundColor="#e8f5ff" Padding="10">
@@ -30,10 +30,10 @@
 
             <BoxView Grid.Row="1" Grid.ColumnSpan="2" HeightRequest="5" BackgroundColor="#262626"></BoxView>
 
-            <Label Grid.Row="0" Grid.Column="0" FontSize="50" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center">Bionic reading</Label>
+            <Label x:Name="bionicLabel" Grid.Row="0" Grid.Column="0" FontSize="50" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center" Text="{x:Binding BionicReading}" />
             <Button x:Name="BionicButton" Text="OFF" AutomationId="BionicButton" TextColor="White" FontSize="Header" Grid.Row="0" Grid.Column="1" BackgroundColor="#c73e1d" CornerRadius="50" HorizontalOptions="Fill" VerticalOptions="Fill" Pressed="ButtonPressed" Released="ButtonReleased" Clicked="ToggleButton"></Button>
-            
-            <Label Grid.Row="2" Grid.Column="0" FontSize="50" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center">Screen Reader</Label>
+
+            <Label x:Name="screenReaderLabel" Grid.Row="2" Grid.Column="0" FontSize="50" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center" Text="{x:Binding ScreenReader}" />
             <Button x:Name="ScreenReaderButton" Text="ON" AutomationId="ScreenReaderButton" TextColor="White" FontSize="Header" Grid.Row="2" Grid.Column="1" BackgroundColor="#52aa5e" CornerRadius="50" HorizontalOptions="Fill" VerticalOptions="Fill" Pressed="ButtonPressed" Released="ButtonReleased" Clicked="ToggleButton"></Button>
         </Grid>
         

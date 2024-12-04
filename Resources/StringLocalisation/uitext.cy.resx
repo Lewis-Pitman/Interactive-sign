@@ -129,4 +129,28 @@
   <data name="HelpSettingText" xml:space="preserve">
     <value>Cymorth</value>
   </data>
+  <data name="MapWhereAmI" xml:space="preserve">
+    <value>Ble ydw i?</value>
+  </data>
+  <data name="MapMoveMap" xml:space="preserve">
+    <value>Symud Map</value>
+  </data>
+  <data name="MapZoomIn" xml:space="preserve">
+    <value>Chwyddo i Mewn</value>
+  </data>
+  <data name="MapZoomOut" xml:space="preserve">
+    <value>Chwyddo Allan</value>
+  </data>
+  <data name="ScaleAdjustableText" xml:space="preserve">
+    <value>Defnyddiwch y botymau ar y chwith a'r dde i wneud hwn yn gyfforddus i'w ddarllen</value>
+  </data>
+  <data name="AccessibilityGuidanceMessage" xml:space="preserve">
+    <value>Cliciwch ar y botymau ymlaen/i ffwrdd i doglo gosodiadau</value>
+  </data>
+  <data name="AccessibilityBionicReading" xml:space="preserve">
+    <value>Darlleniad Bionic</value>
+  </data>
+  <data name="AccessibilityScreenReader" xml:space="preserve">
+    <value>Darllenydd Sgrin</value>
+  </data>
 </root>

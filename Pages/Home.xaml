@@ -114,7 +114,7 @@
                                     <Button AutomationId="currentLocation" BackgroundColor="Transparent" Grid.ColumnSpan="2" ZIndex="2" Pressed="MapButtonPressed" Released="MapButtonReleased" Clicked="MapButtonClicked"/>
 
                                     <Image Source="question.png" Grid.Column="0" ZIndex="1" VerticalOptions="Center" />
-                                    <Label x:Name="mapButton1" Text="Where am I?" Grid.Column="1" FontSize="Header" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" ZIndex="1" />
+                                    <Label x:Name="mapButton1" Text="{x:Binding MapWhereAmI}" Grid.Column="1" FontSize="Header" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" ZIndex="1" />
                                 </Grid>
                             </Grid>
 
@@ -140,14 +140,14 @@
                                     <BoxView x:Name="zoomIn" Grid.Row="4"  Grid.ColumnSpan="2" ZIndex="0" CornerRadius="45" BackgroundColor="#6673ad" />
 
                                     <Image Source="move.png" Grid.Row="0" Grid.Column="0" ZIndex="2" VerticalOptions="Center" />
-                                    <Label x:Name="mapButton2" Text="Move map" Grid.Row="0" Grid.Column="1" FontSize="Header" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" ZIndex="2" />
+                                    <Label x:Name="mapButton2" Text="{x:Binding MapMoveMap}" Grid.Row="0" Grid.Column="1" FontSize="Header" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" ZIndex="2" />
 
                                     <Image Source="out.png" Grid.Row="2" Grid.Column="0" ZIndex="2" VerticalOptions="Center" />
-                                    <Label x:Name="mapButton3" Text="Zoom out" Grid.Row="2" Grid.Column="1" FontSize="Header" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" ZIndex="2" />
+                                    <Label x:Name="mapButton3" Text="{x:Binding MapZoomOut}" Grid.Row="2" Grid.Column="1" FontSize="Header" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" ZIndex="2" />
                                     <Button  AutomationId="zoomOut" BackgroundColor="Transparent" Grid.Row="2" Grid.ColumnSpan="2" ZIndex="3" Pressed="MapButtonPressed" Released="MapButtonReleased" Clicked="MapButtonClicked"/>
 
                                     <Image Source="in.png" Grid.Row="4" Grid.Column="0" ZIndex="2" VerticalOptions="Center" />
-                                    <Label x:Name="mapButton4" AutomationId="zoomOut" Text="Zoom in" Grid.Row="4" Grid.Column="1" FontSize="Header" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" ZIndex="2" />
+                                    <Label x:Name="mapButton4" AutomationId="zoomOut" Text="{x:Binding MapZoomIn}" Grid.Row="4" Grid.Column="1" FontSize="Header" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" ZIndex="2" />
                                     <Button  AutomationId="zoomIn" BackgroundColor="Transparent" Grid.Row="4" Grid.ColumnSpan="2" ZIndex="3" Pressed="MapButtonPressed" Released="MapButtonReleased" Clicked="MapButtonClicked"/>
 
                                 </Grid>

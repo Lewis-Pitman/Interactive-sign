@@ -52,7 +52,7 @@ public partial class Home : ContentPage
     {
         base.OnAppearing();
 
-        //Apply font size settings
+        //Apply font size settings ---
 
         //Header
         shoppingCentreName.FontSize = Settings.Instance.Scale + 20;
@@ -70,11 +70,21 @@ public partial class Home : ContentPage
         accessibilityLabel.FontSize = Settings.Instance.Scale;
         helpLabel.FontSize = Settings.Instance.Scale;
 
-        //Apply language settings
+        //Apply language settings ---
+
         homeViewModel.CentreNameText = LocalisationManager.GetString("ShoppingCentreName");
+
+        //Settings
         homeViewModel.FontSizeSettingText = LocalisationManager.GetString("FontSizeSettingText");
         homeViewModel.AccessibilitySettingText = LocalisationManager.GetString("AccessibilitySettingText");
         homeViewModel.HelpSettingText = LocalisationManager.GetString("HelpSettingText");
+
+        //Map
+        homeViewModel.MapWhereAmI = LocalisationManager.GetString("MapWhereAmI");
+        homeViewModel.MapMoveMap = LocalisationManager.GetString("MapMoveMap");
+        homeViewModel.MapZoomOut = LocalisationManager.GetString("MapZoomOut");
+        homeViewModel.MapZoomIn = LocalisationManager.GetString("MapZoomIn");
+
     }
 
     //Dock ----------------------------------------------------------------------------
@@ -212,7 +222,10 @@ public partial class Home : ContentPage
         var buttonPressed = sender as Button;
         var buttonBackground = FindByName(buttonPressed.AutomationId) as BoxView;
 
-        buttonBackground.BackgroundColor = Color.FromArgb("4357ad");
+        if(buttonBackground != null)
+        {
+            buttonBackground.BackgroundColor = Color.FromArgb("4357ad");
+        }
     }
 
     private void MapButtonReleased(object sender, EventArgs e)
@@ -220,7 +233,10 @@ public partial class Home : ContentPage
         var buttonPressed = sender as Button;
         var buttonBackground = FindByName(buttonPressed.AutomationId) as BoxView;
 
-        buttonBackground.BackgroundColor = Color.FromArgb("6673ad");
+        if (buttonBackground != null)
+        {
+            buttonBackground.BackgroundColor = Color.FromArgb("6673ad");
+        }
     }
 
     private async void MapButtonClicked(object sender, EventArgs e)

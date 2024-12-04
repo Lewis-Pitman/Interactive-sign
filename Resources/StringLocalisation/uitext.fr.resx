@@ -129,4 +129,28 @@
   <data name="HelpSettingText" xml:space="preserve">
     <value>Aide</value>
   </data>
+  <data name="MapWhereAmI" xml:space="preserve">
+    <value>Où suis-je ?</value>
+  </data>
+  <data name="MapMoveMap" xml:space="preserve">
+    <value>Déplacer la carte</value>
+  </data>
+  <data name="MapZoomIn" xml:space="preserve">
+    <value>Zoom avant</value>
+  </data>
+  <data name="MapZoomOut" xml:space="preserve">
+    <value>Zoom arrière</value>
+  </data>
+  <data name="ScaleAdjustableText" xml:space="preserve">
+    <value>Utilisez les boutons à gauche et à droite pour faciliter la lecture.</value>
+  </data>
+  <data name="AccessibilityGuidanceMessage" xml:space="preserve">
+    <value>Cliquez sur les boutons on/off pour basculer les paramètres.</value>
+  </data>
+  <data name="AccessibilityBionicReading" xml:space="preserve">
+    <value>Lecture bionique</value>
+  </data>
+  <data name="AccessibilityScreenReader" xml:space="preserve">
+    <value>Lecteur d'écran</value>
+  </data>
 </root>
