@@ -21,9 +21,4 @@
         <ImageButton Source="flag_germany.png" AutomationId="german" Grid.Row="1" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Fill" Aspect="AspectFill" Clicked="LanguageClicked" Pressed="FlagPressed" Released="FlagReleased"/>
     </Grid>
 
-    <!-- Language confirmation -->
-    
-
-
-
 </ContentPage>
