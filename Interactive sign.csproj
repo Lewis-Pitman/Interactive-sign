@@ -55,6 +55,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="InteractiveSignLocalDatabase.db" />
 	  <None Remove="Resources\Icons\clock.svg" />
 	  <None Remove="Resources\Icons\confirm.svg" />
 	  <None Remove="Resources\Icons\events.svg" />
@@ -72,6 +73,10 @@
 	  <None Remove="Resources\Icons\right.svg" />
 	  <None Remove="Resources\Icons\text.svg" />
 	  <None Remove="Resources\Icons\user.svg" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="InteractiveSignLocalDatabase.db" />
 	</ItemGroup>
 
 	<ItemGroup>

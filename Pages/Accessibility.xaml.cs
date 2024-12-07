@@ -1,3 +1,4 @@
+using Interactive_sign.Classes;
 using Interactive_sign.ViewModels;
 
 namespace Interactive_sign;

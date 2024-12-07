@@ -1,4 +1,5 @@
 using System.Globalization;
+using Interactive_sign.Classes;
 namespace Interactive_sign;
 
 public partial class LanguageConfirm : ContentPage

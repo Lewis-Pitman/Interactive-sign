@@ -4,6 +4,7 @@ using Microsoft.VisualBasic;
 using Microsoft.Maui.Controls;
 using System.Security.Cryptography.X509Certificates;
 using Interactive_sign.ViewModels;
+using Interactive_sign.Classes;
 
 namespace Interactive_sign;
 
@@ -12,10 +13,13 @@ public partial class Home : ContentPage
 {
     private string currentTab = "home";
     private HomeViewModel homeViewModel;
+    private ItemDatabase database;
+
 
     public Home(string tab)
 	{
 		InitializeComponent();
+        database = new ItemDatabase();
         homeViewModel = new HomeViewModel();
 
         BindingContext = homeViewModel;
@@ -44,8 +48,7 @@ public partial class Home : ContentPage
         //-----------------------------------------------
 
         InitialiseEventGrid();
-
-        
+        InitialiseSearchGrid();
     }
 
     protected override void OnAppearing()
@@ -167,8 +170,119 @@ public partial class Home : ContentPage
 
     //---------------------------------------------------------------------------------
 
+    //Search -----------------------------------------------------------------------------
+
+    private async void InitialiseSearchGrid()
+    {
+        var categoryDictionary = await database.GetCategories(); //Used for getting image associated with category
+        var categoryList = categoryDictionary.Keys.ToList<string>(); //List of categories
+        int rowsToMake = (int)Math.Ceiling(categoryList.Count() / 2.0);
+
+        string[] backgroundColours = { "c96e6d", "6673ad", "c6d7ad", "ffdfa3" };
+        string[] borderColours = { "b80c09", "4357ad", "a5cc6b", "fcab10" };
+
+        int colourIndex = 0;
+        int rowCount = 0;
+        int columnCount = 0;
+
+        //Create the rows ready for categories to be added to them
+        for(int i = 0; i < rowsToMake; i++) { categoryGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto }); }
+
+        foreach (string category in categoryList)
+        {
+            var categoryImageCentreItem = await database.GetItem(categoryDictionary[category]);
+
+            //Create the category item ------------------------------------------------------------ Height = new GridLength(3, GridUnitType.Star)
+
+            var categoryItem = new Grid();
+
+            //Add background
+            
+            var itemBackground = new BoxView
+            {
+                BackgroundColor = Color.FromArgb(borderColours[colourIndex]),
+                CornerRadius = 30,
+                ZIndex = 0
+            };
+            categoryGrid.Children.Add(itemBackground);
+            categoryGrid.SetRow(itemBackground, rowCount);
+            categoryGrid.SetColumn(itemBackground, columnCount);
+            
+
+            //Define individual category's grid
+            var categoryItemGrid = new Grid { RowSpacing = 10, Padding = 20 };
+            categoryItemGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+            categoryItemGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Star });
+
+            //Button (Transparent button covering whole grid so that the user can click anywhere, even on the image and text)
+            var categoryItemButton = new Button { BackgroundColor = Colors.Transparent, ZIndex = 5 };
+            categoryItemGrid.Children.Add(categoryItemButton);
+            categoryItemGrid.SetRowSpan(categoryItemButton, 2);
+
+            //Text 
+            var categoryItemLabel = new Label
+            {
+                Text = category,
+                FontSize = Settings.Instance.Scale,
+                TextColor = Color.FromArgb("FFFFFF"),
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center,
+                ZIndex = 3
+            };
+
+            categoryItemGrid.Children.Add(categoryItemLabel);
+            categoryItemGrid.SetRow(categoryItemLabel, 1);
+
+            var labelBackground = new Frame { 
+                BackgroundColor = Color.FromArgb(backgroundColours[colourIndex]),
+                BorderColor = Color.FromArgb(backgroundColours[colourIndex]),
+                ZIndex = 2, 
+                CornerRadius = 60, 
+            };
+            categoryItemGrid.Children.Add(labelBackground);
+            categoryItemGrid.SetRow(labelBackground, 1);
+
+            //Image
+            var categoryItemImage = new Image
+            {
+                Source = ImageSource.FromStream(() => new MemoryStream(categoryImageCentreItem.ItemImage)),
+                ZIndex = 3,
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center
+            };
+            categoryItemGrid.Children.Add(categoryItemImage);
+            categoryItemGrid.SetRow(categoryItemImage, 0);
+
+            var imageBackground = new Frame { 
+                BackgroundColor = Color.FromArgb(backgroundColours[colourIndex]), 
+                BorderColor = Color.FromArgb(backgroundColours[colourIndex]),
+                ZIndex = 2, 
+                CornerRadius = 60,
+            };
+            categoryItemGrid.Children.Add(imageBackground);
+            categoryItemGrid.SetRow(imageBackground, 0);
+
+            //------------------------------------------------------------------------------------
+
+            //Add the created category to the grid of all categories
+            categoryItem.Children.Add(categoryItemGrid);
+            categoryGrid.Children.Add(categoryItem);
+            categoryGrid.SetRow(categoryItem, rowCount);
+            categoryGrid.SetColumn(categoryItem, columnCount);
+
+            
+
+            //Increment counts
+            colourIndex = (colourIndex >= 3) ? 0 : colourIndex + 1;
+            rowCount = (columnCount == 1) ? rowCount + 1 : rowCount;
+            columnCount = (columnCount == 0) ? 1 : 0;
+        }
+    }
+
+    //---------------------------------------------------------------------------------
+
     //Events --------------------------------------------------------------------------
-    
+
     private void InitialiseEventGrid()
     {
         string[] backgroundColours = { "2e2e2e", "414141", "c1c1c1", "ffffff" };

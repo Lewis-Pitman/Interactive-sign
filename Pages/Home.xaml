@@ -64,7 +64,17 @@
             <Grid Grid.Row="1" BackgroundColor="#e8f5ff">
                 <!-- Search/category tab -->
                 <ContentView x:Name="homeTab" IsVisible="True">
-                    <Label FontSize="Header" TextColor="Black">Not implemented yet</Label>
+                    <ScrollView Orientation="Vertical">
+                        <Grid x:Name="categoryGrid" Padding="20" ColumnSpacing="20" RowSpacing="30">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <!-- Dynamically loaded -->
+                            
+                        </Grid>
+                    </ScrollView>
                 </ContentView>
 
                 <!-- Events tab -->

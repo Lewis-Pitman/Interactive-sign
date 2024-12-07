@@ -20,6 +20,7 @@ namespace Interactive_sign
 
 
 //Setting the window to fullscreen to properly scale text etc.
+/*
 #if WINDOWS
         builder.ConfigureLifecycleEvents(events =>
         {
@@ -42,6 +43,7 @@ namespace Interactive_sign
             });
         });
 #endif
+*/
 
 #if DEBUG
             builder.Logging.AddDebug();
