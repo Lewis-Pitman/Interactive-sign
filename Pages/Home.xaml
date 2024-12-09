@@ -80,15 +80,15 @@
                 <!-- Events tab -->
                 <ContentView x:Name="eventsTab" Padding="30" IsVisible="False">
                     <Frame Padding="30" CornerRadius="45" BackgroundColor="#4357ad" ZIndex="0">
-                        <ScrollView Orientation="Horizontal" ZIndex="5">
+                        <ScrollView x:Name="eventScrollView" Orientation="Horizontal" ZIndex="5">
                             <Grid x:Name="eventsTabGrid" BackgroundColor="#4a4a4a">
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="*" />
-                                    <RowDefinition Height="5.5*" />
+                                    <RowDefinition Height="auto" /> 
+                                    <RowDefinition Height="auto" />
                                 </Grid.RowDefinitions>
 
                                 <!-- This content is created dynamically in InitialiseEventGrid() -->
-                                
+                                    
                             </Grid>
                         </ScrollView>
                     </Frame>

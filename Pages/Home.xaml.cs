@@ -15,14 +15,16 @@ public partial class Home : ContentPage
 {
     private string currentTab = "home";
     private HomeViewModel homeViewModel;
-    private ItemDatabase database;
+    private ItemDatabase itemDatabase;
+    private EventDatabase eventDatabase;
 
 
     public Home(string tab)
 	{
 		InitializeComponent();
-        database = new ItemDatabase();
         homeViewModel = new HomeViewModel();
+        itemDatabase = new ItemDatabase();
+        eventDatabase = new EventDatabase();
 
         BindingContext = homeViewModel;
 
@@ -187,7 +189,7 @@ public partial class Home : ContentPage
 
     private async void InitialiseSearchGrid()
     {
-        var categoryDictionary = await database.GetCategories(); //Used for getting image associated with category
+        var categoryDictionary = await itemDatabase.GetCategories(); //Used for getting image associated with category
         var categoryList = categoryDictionary.Keys.ToList<string>(); //List of categories
         int rowsToMake = (int)Math.Ceiling(categoryList.Count() / 2.0);
 
@@ -203,7 +205,7 @@ public partial class Home : ContentPage
 
         foreach (string category in categoryList)
         {
-            var categoryImageCentreItem = await database.GetItem(categoryDictionary[category]);
+            var categoryImageCentreItem = await itemDatabase.GetItem(categoryDictionary[category]);
 
             //Create the category item ------------------------------------------------------------ Height = new GridLength(3, GridUnitType.Star)
 
@@ -306,6 +308,157 @@ public partial class Home : ContentPage
 
     //Events --------------------------------------------------------------------------
 
+    private async void EventButtonClicked(object sender, EventArgs e, int eventID)
+    {
+        await Navigation.PushAsync(new EventDetails(eventID), false);
+    }
+
+    private async void LoadEventItems()
+    {
+        var todaysEvents = await eventDatabase.GetTodaysEvents();
+
+        int rowsToMake = todaysEvents.Count();
+        int rowCount = 1;
+
+        string[] backgroundColours = { "c96e6d", "6673ad", "c6d7ad", "ffdfa3" };
+        string[] borderColours = { "b80c09", "4357ad", "a5cc6b", "fcab10" };
+        int colourIndex = 0;
+
+        for (int i = 0; i < rowsToMake; i++) { eventsTabGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto }); }
+
+        foreach (EventItem item in todaysEvents)
+        {
+            var backgroundGrid = new Grid { ZIndex = 10, HeightRequest = 200 };
+
+            var itemGrid = new Grid { Padding = 20 };
+            itemGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Star }); //Image 
+            itemGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(3, GridUnitType.Star) }); //Title
+            itemGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Star }); //Info icon
+
+
+            //Background
+            var itemBorder = new BoxView
+            {
+                BackgroundColor = Color.FromArgb(borderColours[colourIndex]),
+                CornerRadius = 40,
+                ZIndex = 0
+            };
+
+            var itemBackground = new BoxView
+            {
+                BackgroundColor = Color.FromArgb(backgroundColours[colourIndex]),
+                CornerRadius = 40,
+                ZIndex = 1
+            };
+
+
+            backgroundGrid.Children.Add(itemBorder);
+            itemGrid.Children.Add(itemBackground);
+            itemGrid.SetColumnSpan(itemBackground, 3);
+
+            //Button
+            var itemButton = new Button
+            {
+                BackgroundColor = Colors.Transparent,
+                AutomationId = item.ItemID.ToString(),
+                ZIndex = 5
+            };
+
+            itemButton.Clicked += (sender, e) => EventButtonClicked(sender, e, item.EventID);
+            backgroundGrid.Children.Add(itemButton);
+
+
+
+            //Image (If null, image is taken from itemID)
+            if (item.EventImage != null)
+            {
+                var itemImage = new Image
+                {
+                    Source = ImageSource.FromStream(() => new MemoryStream(item.EventImage)),
+                    HorizontalOptions = LayoutOptions.Fill,
+                    VerticalOptions = LayoutOptions.Fill,
+                    MaximumWidthRequest = 400,
+                    Aspect = Aspect.AspectFill
+                };
+
+                var imageFrame = new Frame
+                {
+                    BorderColor = Color.FromArgb(backgroundColours[colourIndex]),
+                    ZIndex = 2,
+                    CornerRadius = 40,
+                    Padding = 0,
+                    VerticalOptions = LayoutOptions.Fill,
+                    MaximumWidthRequest = 400,
+                    Content = itemImage
+                };
+
+                itemGrid.Children.Add(imageFrame);
+                itemGrid.SetColumn(imageFrame, 0);
+            }
+            else
+            {
+                var itemFromEvent = await itemDatabase.GetItem(item.ItemID);
+
+                var itemImage = new Image
+                {
+                    Source = ImageSource.FromStream(() => new MemoryStream(itemFromEvent.ItemImage)),
+                    HorizontalOptions = LayoutOptions.Fill,
+                    VerticalOptions = LayoutOptions.Fill,
+                    Aspect = Aspect.AspectFill,
+                    MaximumWidthRequest = 400
+                };
+
+                var imageFrame = new Frame
+                {
+                    BorderColor = Color.FromArgb(backgroundColours[colourIndex]),
+                    ZIndex = 2,
+                    CornerRadius = 40,
+                    Padding = 0,
+                    VerticalOptions = LayoutOptions.Fill,
+                    MaximumWidthRequest = 400,
+                    Content = itemImage
+                };
+
+                itemGrid.Children.Add(imageFrame);
+                itemGrid.SetColumn(imageFrame, 0);
+            }
+
+            //Text
+            var itemLabel = new Label
+            {
+                Text = item.EventTitle,
+                TextColor = Colors.White,
+                FontSize = Settings.Instance.Scale,
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center,
+                ZIndex = 2
+            };
+
+            itemGrid.Children.Add(itemLabel);
+            itemGrid.SetColumn(itemLabel, 1);
+
+            //Icon
+            var imageIcon = new Image
+            {
+                Source = "info.png",
+                ZIndex = 2
+            };
+
+            itemGrid.Children.Add(imageIcon);
+            itemGrid.SetColumn(imageIcon, 2);
+
+            backgroundGrid.Children.Add(itemGrid);
+
+            eventsTabGrid.Children.Add(backgroundGrid);
+            eventsTabGrid.SetRow(backgroundGrid, rowCount);
+            eventsTabGrid.SetColumn(backgroundGrid, (int)Math.Floor(item.StartTime / 30.0));
+            eventsTabGrid.SetColumnSpan(backgroundGrid, (int)Math.Ceiling((item.EndTime - item.StartTime) / 30.0));
+
+            colourIndex = (colourIndex >= 3) ? 0 : colourIndex + 1;
+            rowCount++;
+        }
+    }
+
     private void InitialiseEventGrid()
     {
         string[] backgroundColours = { "2e2e2e", "414141", "c1c1c1", "ffffff" };
@@ -318,9 +471,17 @@ public partial class Home : ContentPage
             eventsTabGrid.AddColumnDefinition(new ColumnDefinition { Width = GridLength.Auto });
             
             //Add background
-            var background = new BoxView { BackgroundColor = Color.FromArgb(backgroundColours[backgroundColourCount]), ZIndex = 1, WidthRequest = 300, HeightRequest = 800 };
+            var background = new BoxView { 
+                BackgroundColor = Color.FromArgb(backgroundColours[backgroundColourCount]), 
+                ZIndex = 1, 
+                WidthRequest = 500, 
+                HeightRequest = 1000,
+                HorizontalOptions = LayoutOptions.Fill,
+                VerticalOptions = LayoutOptions.Fill
+            };
             eventsTabGrid.Children.Add(background);
             eventsTabGrid.SetRow(background, 1);
+            eventsTabGrid.SetRowSpan(background, 10);
             eventsTabGrid.SetColumn(background, i);
 
             //Increment background colour count to get the correct background colour sequence
@@ -333,7 +494,7 @@ public partial class Home : ContentPage
                 string timeLabelText = timeCount.ToString() + ":00 ";
                 timeLabelText += (timeCount >= 12) ? "PM" : "AM"; //If the time is 12 or above, add PM, else add AM to the string
 
-                var timeLabel = new Label { TextColor = Color.FromArgb("FFFFFF"), FontSize = 60, Text=timeLabelText, ZIndex=2};
+                var timeLabel = new Label { TextColor = Color.FromArgb("FFFFFF"), FontSize = 60, Text=timeLabelText, ZIndex=5};
                 eventsTabGrid.Children.Add(timeLabel);
                 eventsTabGrid.SetRow(timeLabel, 0);
                 eventsTabGrid.SetColumn(timeLabel, i);
@@ -343,11 +504,7 @@ public partial class Home : ContentPage
 
         }
 
-        //Add top label (This adds a box in the middle of the screen, but works because the grid's background is the same colour. Alignment options don't work here)
-        var topLabel = new BoxView { BackgroundColor = Color.FromArgb("4a4a4a"), ZIndex = 1, WidthRequest=10, HeightRequest=100};
-        eventsTabGrid.Children.Add(topLabel);
-        eventsTabGrid.SetRow(topLabel, 0);
-        eventsTabGrid.SetColumnSpan(topLabel, 49);
+        LoadEventItems();
     }
 
     //---------------------------------------------------------------------------------

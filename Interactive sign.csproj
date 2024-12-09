@@ -178,6 +178,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Pages\EventDetails.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Pages\LanguageConfirm.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

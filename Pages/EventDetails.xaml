@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Interactive_sign.Pages.EventDetails"
+             Title="EventDetails"
+             Shell.NavBarIsVisible="False">
+
+    <ContentPage.Content>
+
+        <Grid BackgroundColor="#e8f5ff">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="7*" />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+
+            <!-- Header -->
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Shopping centre name -->
+                <BoxView BackgroundColor="#262626" Grid.Row="0" Grid.Column="0" ZIndex="0" />
+                <Label x:Name="categoryLabel" Text="Selected category" Grid.Row="0" Grid.Column="0" ZIndex="1" VerticalOptions="Center" FontSize="Header" TextColor="White" />
+
+                <!-- Current time -->
+                <Grid  Grid.Column="1" BackgroundColor="#4b4b4b">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="3*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Image Source="clock.png" Grid.Column="0" Aspect="AspectFit"/>
+                    <Label x:Name="currentTimeLabel" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Header" TextColor="White">00:00</Label>
+                </Grid>
+            </Grid>
+
+            <!-- Cancel button -->
+            <ImageButton x:Name="cancelButton" 
+         Grid.Row="3" 
+         Source="cancel.png" 
+         BackgroundColor="#c73e1d"
+         HorizontalOptions="FillAndExpand"
+         VerticalOptions="Fill"
+         Clicked="CancelClicked" 
+         Pressed="CancelPressed" 
+         Released="CancelReleased"/>
+
+            <!-- Main -->
+            <Grid Grid.Row="1" BackgroundColor="#e8f5ff" ColumnSpacing="20" Padding="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Left panel (Image and map) -->
+                <Grid Grid.Column="0" RowSpacing="20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="3*" />
+                        <RowDefinition Height="4*" />
+                    </Grid.RowDefinitions>
+
+                    <!-- Image -->
+                    <BoxView Grid.Row="0" BackgroundColor="Black" CornerRadius="40" ZIndex="0" />
+                    <Grid Padding="20" Grid.Row="0">
+                        <Frame x:Name="imageFrame" Padding="0" CornerRadius="40" ZIndex="1" />
+                    </Grid>
+                    <!-- Map -->
+                    <Button BackgroundColor="Transparent" Grid.RowSpan="2" ZIndex="3" Clicked="MapClicked" />
+                    <BoxView Grid.Row="1" BackgroundColor="#4357ad" CornerRadius="40" ZIndex="0" />
+                    <Grid Padding="20" Grid.Row="1" ZIndex="1">
+                        <Frame x:Name="mapFrame" Padding="0" CornerRadius="40" InputTransparent="True" />
+                    </Grid>
+
+                </Grid>
+
+                <!-- Right panel (Item information) -->
+                <Grid Grid.Column="1">
+                    <BoxView CornerRadius="40" BackgroundColor="Black" ZIndex="0" />
+                    <!-- Border -->
+                    <Grid ZIndex="1" Padding="20">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*" />
+                            <!-- Description -->
+                            <RowDefinition Height="*" />
+                            <!-- Opening hours -->
+                            <RowDefinition Height="*" />
+                            <!-- Location -->
+                        </Grid.RowDefinitions>
+
+                        <!-- Background -->
+                        <BoxView BackgroundColor="#262626" Grid.RowSpan="4" ZIndex="1" CornerRadius="40" />
+
+                        <!-- Title -->
+                        <Label x:Name="descriptionLabel" Text="Title" Grid.Row="0" TextColor="White" ZIndex="2" Padding="20"/>
+
+                        <!-- Opening times -->
+                        <Grid Grid.Row="1" ZIndex="2" Padding="20">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="4*" />
+                                <ColumnDefinition Width="2*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Image Grid.Column="0" Source="clock.png" ZIndex="3"/>
+                            <Label x:Name="openingHoursLabel" Grid.Column="1" VerticalOptions="Center" TextColor="White" ZIndex="3"/>
+                            <BoxView x:Name="openStatusBackground" Grid.Column="2" BackgroundColor="#52aa5e" CornerRadius="60" ZIndex="2" />
+                            <Label x:Name="openStatusLabel" Grid.Column="2" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" Text="OPEN" ZIndex="3" />
+                        </Grid>
+
+                        <!-- Address -->
+                        <Grid Grid.Row="2" ZIndex="2" Padding="20">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="6*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Image Grid.Column="0" Source="map.png" ZIndex="2" />
+                            <Label x:Name="addressLabel" Grid.Column="1" VerticalOptions="Center" TextColor="White" Text="Address label" ZIndex="2"/>
+                        </Grid>
+
+                    </Grid>
+                </Grid>
+            </Grid>
+
+
+        </Grid>
+
+    </ContentPage.Content>
+
+</ContentPage>

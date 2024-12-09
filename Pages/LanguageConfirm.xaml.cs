@@ -18,20 +18,24 @@ public partial class LanguageConfirm : ContentPage
 				flagImage.Source = "flag_uk.png";
 				flagName.Text = "English";
 				Settings.Instance.savedCulture = new CultureInfo("en");
-				break;
+                Settings.Instance.Language = "en";
+                break;
 			case "cy":
                 flagImage.Source = "flag_wales.png";
                 flagName.Text = "Cymraeg";
                 Settings.Instance.savedCulture = new CultureInfo("cy");
+                Settings.Instance.Language = "cy";
                 break;
 			case "fr":
                 flagImage.Source = "flag_france.png";
                 flagName.Text = "Français";
                 Settings.Instance.savedCulture = new CultureInfo("fr");
+                Settings.Instance.Language = "fr";
                 break;
 			case "de":
                 flagImage.Source = "flag_germany.png";
                 Settings.Instance.savedCulture = new CultureInfo("de");
+                Settings.Instance.Language = "de";
                 flagName.Text = "Deutsch";
                 break;
 		}
