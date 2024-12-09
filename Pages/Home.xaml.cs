@@ -5,6 +5,8 @@ using Microsoft.Maui.Controls;
 using System.Security.Cryptography.X509Certificates;
 using Interactive_sign.ViewModels;
 using Interactive_sign.Classes;
+using Interactive_sign.Pages;
+using System.Xml.Linq;
 
 namespace Interactive_sign;
 
@@ -47,8 +49,19 @@ public partial class Home : ContentPage
 
         //-----------------------------------------------
 
+        //Initialise tabs
+
         InitialiseEventGrid();
         InitialiseSearchGrid();
+
+        var mapContent = new WebView
+        {
+            Source = "https://www.google.co.uk/maps/place/Yeovil/",
+            HorizontalOptions = LayoutOptions.Fill,
+            VerticalOptions = LayoutOptions.Fill
+        };
+
+        mapView.Content = mapContent;
     }
 
     protected override void OnAppearing()
@@ -211,11 +224,12 @@ public partial class Home : ContentPage
 
             //Define individual category's grid
             var categoryItemGrid = new Grid { RowSpacing = 10, Padding = 20 };
-            categoryItemGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+            categoryItemGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(3, GridUnitType.Star) });
             categoryItemGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Star });
 
             //Button (Transparent button covering whole grid so that the user can click anywhere, even on the image and text)
-            var categoryItemButton = new Button { BackgroundColor = Colors.Transparent, ZIndex = 5 };
+            var categoryItemButton = new Button { BackgroundColor = Colors.Transparent, ZIndex = 5, AutomationId = category };
+            categoryItemButton.Clicked += CategoryItemButtonClicked;
             categoryItemGrid.Children.Add(categoryItemButton);
             categoryItemGrid.SetRowSpan(categoryItemButton, 2);
 
@@ -247,20 +261,23 @@ public partial class Home : ContentPage
             {
                 Source = ImageSource.FromStream(() => new MemoryStream(categoryImageCentreItem.ItemImage)),
                 ZIndex = 3,
-                HorizontalOptions = LayoutOptions.Center,
-                VerticalOptions = LayoutOptions.Center
+                HorizontalOptions = LayoutOptions.Fill,
+                VerticalOptions = LayoutOptions.Fill,
+                Aspect = Aspect.AspectFill
             };
-            categoryItemGrid.Children.Add(categoryItemImage);
-            categoryItemGrid.SetRow(categoryItemImage, 0);
 
-            var imageBackground = new Frame { 
-                BackgroundColor = Color.FromArgb(backgroundColours[colourIndex]), 
+            var imageFrame = new Frame {
+                BackgroundColor = Color.FromArgb(backgroundColours[colourIndex]),
                 BorderColor = Color.FromArgb(backgroundColours[colourIndex]),
-                ZIndex = 2, 
-                CornerRadius = 60,
+                ZIndex = 2,
+                CornerRadius = 40,
+                Padding = 0,
+                HorizontalOptions = LayoutOptions.Fill,
+                VerticalOptions = LayoutOptions.Fill,
+                Content = categoryItemImage
             };
-            categoryItemGrid.Children.Add(imageBackground);
-            categoryItemGrid.SetRow(imageBackground, 0);
+            categoryItemGrid.Children.Add(imageFrame);
+            categoryItemGrid.SetRow(imageFrame, 0);
 
             //------------------------------------------------------------------------------------
 
@@ -277,6 +294,12 @@ public partial class Home : ContentPage
             rowCount = (columnCount == 1) ? rowCount + 1 : rowCount;
             columnCount = (columnCount == 0) ? 1 : 0;
         }
+    }
+
+    private async void CategoryItemButtonClicked(object sender, EventArgs e)
+    {
+        var categoryItem = sender as Button;
+        await Navigation.PushAsync(new CategoryDetails(categoryItem.AutomationId), false);
     }
 
     //---------------------------------------------------------------------------------

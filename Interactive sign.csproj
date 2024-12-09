@@ -62,6 +62,7 @@
 	  <None Remove="Resources\Icons\gear.svg" />
 	  <None Remove="Resources\Icons\home.svg" />
 	  <None Remove="Resources\Icons\in.svg" />
+	  <None Remove="Resources\Icons\info.svg" />
 	  <None Remove="Resources\Icons\language.svg" />
 	  <None Remove="Resources\Icons\left.svg" />
 	  <None Remove="Resources\Icons\map.svg" />
@@ -104,6 +105,12 @@
 	  <Compile Update="Pages\HelpScreen.xaml.cs">
 	    <DependentUpon>HelpScreen.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="Pages\CategoryDetails.xaml.cs">
+	    <DependentUpon>CategoryDetails.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Pages\ItemDetails.xaml.cs">
+	    <DependentUpon>ItemDetails.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Pages\ScaleSelect.xaml.cs">
 	    <DependentUpon>ScaleSelect.xaml</DependentUpon>
 	  </Compile>
@@ -137,6 +144,7 @@
 	  <MauiImage Include="Resources\Icons\gear.svg" />
 	  <MauiImage Include="Resources\Icons\home.svg" />
 	  <MauiImage Include="Resources\Icons\in.svg" />
+	  <MauiImage Include="Resources\Icons\info.svg" />
 	  <MauiImage Include="Resources\Icons\language.svg" />
 	  <MauiImage Include="Resources\Icons\left.svg" />
 	  <MauiImage Include="Resources\Icons\map.svg" />
@@ -180,6 +188,12 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\HelpScreen.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\CategoryDetails.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\ItemDetails.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\ScaleSelect.xaml">

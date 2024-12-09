@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Interactive_sign.Pages.CategoryDetails"
+             Title="CategoryDetails"
+             Shell.NavBarIsVisible="False">
+
+    <ContentPage.Content>
+
+        <Grid BackgroundColor="#e8f5ff">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="7*" />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+
+            <!-- Header -->
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <BoxView BackgroundColor="#262626" Grid.Row="0" ZIndex="1" />
+                <Label x:Name="headerMessage" 
+                       Text="Select an item in this category" 
+                       Grid.Row="0" 
+                       Grid.Column="0" 
+                       ZIndex="2" 
+                       VerticalOptions="Center" 
+                       HorizontalOptions="Center" 
+                       FontSize="Header" 
+                       TextColor="White" />
+
+            </Grid>
+
+            <!-- Cancel button -->
+            <ImageButton x:Name="cancelButton" 
+                         Grid.Row="3" 
+                         Source="cancel.png" 
+                         BackgroundColor="#c73e1d"
+                         HorizontalOptions="FillAndExpand"
+                         VerticalOptions="Fill"
+                         Clicked="CancelClicked" 
+                         Pressed="CancelPressed" 
+                         Released="CancelReleased"/>
+
+            <!-- Main -->
+            <ScrollView Orientation="Vertical" Grid.Row="1">
+            <Grid x:Name="itemList" BackgroundColor="#e8f5ff" RowSpacing="15" Padding="20">
+                <!-- Created dynamically -->
+            </Grid>
+            </ScrollView>
+        </Grid>
+
+    </ContentPage.Content>
+
+</ContentPage>

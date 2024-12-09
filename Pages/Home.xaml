@@ -170,7 +170,7 @@
                             <BoxView ZIndex="0" BackgroundColor="#4357ad" CornerRadius="25" />
                         </Grid>
                         <Grid Grid.Column="1" Padding="20" ZIndex="1">
-                            <WebView x:Name="googleMap" ZIndex="1" Grid.Column="1" Source="https://www.google.com/maps/@50.9480587,-2.63704,18.67" />
+                            <Frame x:Name="mapView" ZIndex="1" Grid.Column="1" CornerRadius="25" Padding="0" BorderColor="#4357ad" />
                         </Grid>
 
 
