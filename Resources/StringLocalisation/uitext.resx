@@ -153,4 +153,13 @@
   <data name="AccessibilityScreenReader" xml:space="preserve">
     <value>Screen Reader</value>
   </data>
+  <data name="Help2" xml:space="preserve">
+    <value>When you have tapped on a category, you can swipe your finger up and down to scroll through the available items, and tap on one that you'd like more information on.</value>
+  </data>
+  <data name="Help1" xml:space="preserve">
+    <value>On the search tab, you can scroll through categories by swiping your finger up and down on the screen. To see items inside a category, tap on the category.</value>
+  </data>
+  <data name="Help3" xml:space="preserve">
+    <value>On the events tab, swipe your finger left and right on the timeline to view events. When you see one that interests you, tap on it for more information.</value>
+  </data>
 </root>

@@ -57,7 +57,7 @@
 
                             <Grid Grid.Column="1" Padding="20">
                                 <Frame BackgroundColor="#262626" CornerRadius="30" Padding="0"/>
-                                <Label x:Name="textLabel" FontSize="Header" TextColor="White" Text="Not implemented yet!" Padding="20" />
+                                <Label x:Name="textLabel" FontSize="Header" TextColor="White" Text="{Binding Text}" Padding="20" />
                             </Grid>
                         </Grid>
                         

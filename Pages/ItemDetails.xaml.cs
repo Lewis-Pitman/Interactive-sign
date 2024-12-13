@@ -72,7 +72,7 @@ public partial class ItemDetails : ContentPage
 
         var mapWebView = new WebView
         {
-            Source = "https://www.google.co.uk/maps/@50.9451166,-2.6374569,4080m",
+            Source = "https://www.google.co.uk/maps/@51.3836602,-2.1981736,459505m",
             HorizontalOptions = LayoutOptions.Fill,
             VerticalOptions = LayoutOptions.Fill
         };

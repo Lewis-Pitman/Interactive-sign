@@ -1,14 +1,17 @@
+using Interactive_sign.Classes;
+using Interactive_sign.ViewModels;
+
 namespace Interactive_sign;
 
 public partial class HelpScreen : ContentPage
 {
+    private HelpViewModel helpViewModel;
     private int screen = 1;
-    private string text1 = "On the search tab, you can scroll through categories by swiping your finger up and down on the screen. To see items inside a category, tap on the category.";
-    private string text2 = "When you have tapped on a category, you can swipe your finger up and down to scroll through the available items, and tap on one that you'd like more information on.";
-    private string text3 = "On the events tab, swipe your finger left and right on the timeline to view events. When you see one that interests you, tap on it for more information.";
     public HelpScreen()
     {
         InitializeComponent();
+        helpViewModel = new HelpViewModel();
+        BindingContext = helpViewModel;
         UpdateScreen();
     }
 
@@ -23,7 +26,7 @@ public partial class HelpScreen : ContentPage
                     Aspect = Aspect.AspectFill
                 };
                 imageFrame.Content = image2;
-                textLabel.Text = text2;
+                helpViewModel.Text = LocalisationManager.GetString("Help2");
                 break;
             case 3:
                 var image3 = new Image
@@ -32,7 +35,7 @@ public partial class HelpScreen : ContentPage
                     Aspect = Aspect.AspectFill
                 };
                 imageFrame.Content = image3;
-                textLabel.Text = text3;
+                helpViewModel.Text = LocalisationManager.GetString("Help3");
                 break;
             default:
                 var image1 = new Image
@@ -41,7 +44,7 @@ public partial class HelpScreen : ContentPage
                     Aspect = Aspect.AspectFill
                 };
                 imageFrame.Content = image1;
-                textLabel.Text = text1;
+                helpViewModel.Text = LocalisationManager.GetString("Help1");
                 break;
         }
     }

@@ -106,6 +106,33 @@ namespace Interactive_sign.Resources.StringLocalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to On the search tab, you can scroll through categories by swiping your finger up and down on the screen. To see items inside a category, tap on the category..
+        /// </summary>
+        internal static string Help1 {
+            get {
+                return ResourceManager.GetString("Help1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to When you have tapped on a category, you can swipe your finger up and down to scroll through the available items, and tap on one that you&apos;d like more information on..
+        /// </summary>
+        internal static string Help2 {
+            get {
+                return ResourceManager.GetString("Help2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to On the events tab, swipe your finger left and right on the timeline to view events. When you see one that interests you, tap on it for more information..
+        /// </summary>
+        internal static string Help3 {
+            get {
+                return ResourceManager.GetString("Help3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Help.
         /// </summary>
         internal static string HelpSettingText {

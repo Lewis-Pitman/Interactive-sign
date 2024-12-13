@@ -153,4 +153,13 @@
   <data name="AccessibilityScreenReader" xml:space="preserve">
     <value>Darllenydd Sgrin</value>
   </data>
+  <data name="Help2" xml:space="preserve">
+    <value>Pan fyddwch wedi tapio ar gategori, gallwch swipe eich bys i fyny ac i lawr i sgrolio drwy'r eitemau sydd ar gael, a thapio ar un yr hoffech fwy o wybodaeth am.</value>
+  </data>
+  <data name="Help1" xml:space="preserve">
+    <value>Ar y tab chwilio, gallwch sgrolio trwy gategorïau trwy droi eich bys i fyny ac i lawr ar y sgrin. I weld eitemau y tu mewn i gategori, tapiwch y categori.</value>
+  </data>
+  <data name="Help3" xml:space="preserve">
+    <value>Ar y tab digwyddiadau, trowch eich bys i'r chwith ac i'r dde ar y llinell amser i weld digwyddiadau. Pan welwch un sydd o ddiddordeb i chi, tapiwch arno am ragor o wybodaeth.</value>
+  </data>
 </root>

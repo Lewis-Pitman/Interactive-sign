@@ -153,4 +153,13 @@
   <data name="AccessibilityScreenReader" xml:space="preserve">
     <value>Lecteur d'écran</value>
   </data>
+  <data name="Help2" xml:space="preserve">
+    <value>Lorsque vous avez cliqué sur une catégorie, vous pouvez faire glisser votre doigt vers le haut et vers le bas pour faire défiler les éléments disponibles et cliquer sur celui sur lequel vous souhaitez obtenir plus d'informations.</value>
+  </data>
+  <data name="Help1" xml:space="preserve">
+    <value>Dans l'onglet de recherche, vous pouvez faire défiler les catégories en faisant glisser votre doigt vers le haut ou vers le bas de l'écran. Pour afficher les éléments d'une catégorie, appuyez sur cette dernière.</value>
+  </data>
+  <data name="Help3" xml:space="preserve">
+    <value>Dans l'onglet « Événements », faites glisser votre doigt vers la gauche et la droite sur la ligne du temps pour afficher les événements. Lorsque vous en voyez un qui vous intéresse, appuyez dessus pour obtenir plus d'informations.</value>
+  </data>
 </root>

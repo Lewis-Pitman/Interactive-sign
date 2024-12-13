@@ -153,4 +153,13 @@
   <data name="AccessibilityScreenReader" xml:space="preserve">
     <value>Bildschirmleser</value>
   </data>
+  <data name="Help2" xml:space="preserve">
+    <value>Wenn Sie auf eine Kategorie getippt haben, können Sie mit dem Finger nach oben und unten streichen, um durch die verfügbaren Elemente zu blättern, und auf eines tippen, zu dem Sie weitere Informationen wünschen.</value>
+  </data>
+  <data name="Help1" xml:space="preserve">
+    <value>Auf der Registerkarte „Suche“ können Sie durch die Kategorien blättern, indem Sie mit dem Finger auf dem Bildschirm nach oben oder unten streichen. Um Elemente innerhalb einer Kategorie zu sehen, tippen Sie auf die Kategorie.</value>
+  </data>
+  <data name="Help3" xml:space="preserve">
+    <value>Streichen Sie auf der Registerkarte Ereignisse mit dem Finger nach links und rechts über die Zeitleiste, um Ereignisse anzuzeigen. Wenn Sie ein Ereignis sehen, das Sie interessiert, tippen Sie es an, um weitere Informationen zu erhalten.</value>
+  </data>
 </root>

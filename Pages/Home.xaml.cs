@@ -58,7 +58,7 @@ public partial class Home : ContentPage
 
         var mapContent = new WebView
         {
-            Source = "https://www.google.co.uk/maps/place/Yeovil/",
+            Source = "https://www.google.co.uk/maps/@51.3836602,-2.1981736,459505m",
             HorizontalOptions = LayoutOptions.Fill,
             VerticalOptions = LayoutOptions.Fill
         };
