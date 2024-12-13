@@ -12,6 +12,8 @@
 		either BOTH runtimes must be indicated or ONLY macatalyst-x64. -->
 		<!-- For example: <RuntimeIdentifiers>maccatalyst-x64;maccatalyst-arm64</RuntimeIdentifiers> -->
 
+		<WindowsPackageType>None</WindowsPackageType>
+
 		<OutputType>WinExe</OutputType>
 		<RootNamespace>Interactive_sign</RootNamespace>
 		<UseMaui>true</UseMaui>
