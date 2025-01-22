@@ -32,11 +32,17 @@ namespace Interactive_sign.Classes
 
         public async Task<List<EventItem>> GetTodaysEvents()
         {
+
             await Init();
 
             string today = DateTime.Today.ToString("yyyy-MM-dd");
             var eventList = await database.Table<EventItem>().Where(i => i.Date == today).ToListAsync();
-            return eventList;
+            //return eventList;
+
+            // !! Changed for demo purposes. The above code works for getting today's events only,
+            //    however all items are being returned below in order to demonstarte the event
+            //    functionality without having to manually edit the date in the database each time.
+            return await database.Table<EventItem>().ToListAsync();
         }
     }
 }
